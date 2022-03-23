@@ -8,7 +8,7 @@
 [Buggy Supabase Soccer Scorekeeper](https://github.com/alchemycodelab/buggy-js-soccer-scorekeeper-supabase)
 
 Here is the model for the `games` table
-
+arbitrary change
 ![](./games-model.png)
 
 ### Live Example:
