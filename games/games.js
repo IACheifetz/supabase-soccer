@@ -35,32 +35,32 @@ nameForm.addEventListener('submit', (e) => {
 
     // reset the form values
 
-    displayCurrentGameEl()
+    displayCurrentGameEl();
 });
 
 
 teamOneAddButton.addEventListener('click', () => {
     // increment the current state for team one's score
     
-    displayCurrentGameEl()
+    displayCurrentGameEl();
 });
 
 teamTwoAddButton.addEventListener('click', () => {
     // increment the current state for team two's score
 
-    displayCurrentGameEl()
+    displayCurrentGameEl();
 });
 
 teamOneSubtractButton.addEventListener('click', () => {
     // decrement the current state for team one's score
 
-    displayCurrentGameEl()
+    displayCurrentGameEl();
 });
 
 teamTwoSubtractButton.addEventListener('click', () => {
     // decrement the current state for team two's score
 
-    displayCurrentGameEl()
+    displayCurrentGameEl();
 });
 
 finishGameButton.addEventListener('click', async() => {
@@ -83,6 +83,7 @@ logoutButton.addEventListener('click', () => {
  // on load . . .
 window.addEventListener('', async() => {
     // display all past games (hint: call displayAllGames())
+    displayAllGames();
 });
 
 
@@ -100,9 +101,9 @@ function displayCurrentGameEl() {
 
 function displayAllGames() {
     // clear out the past games list in the DOM
-    
+    pastGamesEl.textContent = '';
     // FETCH ALL GAMES from supabase
-
+    getGames();
     // loop through the past games 
     // render and append a past game for each past game in state
 }
