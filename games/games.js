@@ -41,8 +41,9 @@ nameForm.addEventListener('submit', (e) => {
     currentGame.name1 = name1;
     currentGame.name2 = name2;
     // reset the form values
-
+    
     displayCurrentGameEl();
+    nameForm.reset();
 });
 
 
@@ -74,9 +75,12 @@ finishGameButton.addEventListener('click', async() => {
     // create a new game using the current game state
     await createGame(currentGame);
     // after creating this new game, re-fetch the games to get the updated state and display them (hint: call displayAllGames())
+    
     const games = await getGames();
 
     pastGames = games;
+
+    displayAllGames();
 
     currentGame = {
         name1: '',
@@ -93,7 +97,14 @@ logoutButton.addEventListener('click', () => {
 });
 
  // on load . . .
-window.addEventListener('', async() => {
+window.addEventListener('load', async() => {
+    const games = await getGames();
+
+    if (games) {
+        pastGames = games;
+
+        displayAllGames();
+    }
     // display all past games (hint: call displayAllGames())
     displayAllGames();
 });
